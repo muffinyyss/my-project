@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>@yield('title', 'My App')</title>
+
+    <!-- Vendor CSS -->
+    <link href="{{ asset('vendors/bootstrap/dist/css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('vendors/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('vendors/nprogress/nprogress.css') }}" rel="stylesheet">
+    <link href="{{ asset('vendors/animate.css/animate.min.css') }}" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+
+    <!-- Gentelella Custom CSS -->
+    <link href="{{ asset('gentelella/css/custom.min.css') }}" rel="stylesheet">
+</head>
+<body class="login">
+
+    @yield('content')
+
+    <!-- JS (ถ้าจำเป็น) -->
+    <script src="{{ asset('vendors/jquery/jquery.min.js') }}"></script>
+    <script src="{{ asset('vendors/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ asset('vendors/nprogress/nprogress.js') }}"></script>
+    <script src="{{ asset('gentelella/js/custom.min.js') }}"></script>
+
+</body>
+</html>
