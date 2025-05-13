@@ -12,13 +12,24 @@
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 
-
     <!-- Gentelella Custom CSS -->
     <link href="{{ asset('gentelella/css/custom.min.css') }}" rel="stylesheet">
 </head>
-<body class="login">
+<body class="nav-md">
 
-    @yield('content')
+    <div class="container body">
+        <div class="main_container">
+
+            <!-- Sidebar -->
+            @include('layouts.sidebar')  {{-- เรียกใช้งาน Sidebar ที่แยกไว้ --}}
+
+            <!-- Content -->
+            <div class="right_col" role="main">
+                @yield('content')  {{-- เนื้อหาของแต่ละหน้าจะถูกแทรกตรงนี้ --}}
+            </div>
+
+        </div>
+    </div>
 
     <!-- JS (ถ้าจำเป็น) -->
     <script src="{{ asset('vendors/jquery/jquery.min.js') }}"></script>

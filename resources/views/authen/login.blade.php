@@ -4,16 +4,14 @@
 
 @section('content')
     <div>
-        {{-- <a class="hiddenanchor" id="signup"></a>
-        <a class="hiddenanchor" id="signin"></a> --}}
-
         <div class="container-fluid vh-100 d-flex justify-content-center align-items-center bg-light">
             <div class="card shadow-lg rounded-4 p-4" style="min-width: 400px; max-width: 500px; width: 100%;">
                 <div class="card-body">
                     <div class="text-center mb-5 mt-5">
                         <h4 class="fw-bold">Welcome</h4>
                     </div>
-                    <form>
+                    <form method="POST" action="{{ url('/test') }}">
+                        @csrf
                         <div class="mb-4">
                             <label class="form-label fw-semibold fs-5" for="site">Site</label>
                             <input type="text" id="site" class="form-control form-control-lg" placeholder="Site" required />
@@ -99,13 +97,17 @@
 
     <script>
         function togglePassword() {
-            const passwordInput = document.getElementById("password");
-            const toggleIcon = document.getElementById("toggleIcon");
-
-            const isPassword = passwordInput.type === "password";
-            passwordInput.type = isPassword ? "text" : "password";
-            toggleIcon.classList.toggle("bi-eye");
-            toggleIcon.classList.toggle("bi-eye-slash");
+            const password = document.getElementById('password');
+            const icon = document.getElementById('toggleIcon');
+            if (password.type === 'password') {
+                password.type = 'text';
+                icon.classList.remove('bi-eye-slash');
+                icon.classList.add('bi-eye');
+            } else {
+                password.type = 'password';
+                icon.classList.remove('bi-eye');
+                icon.classList.add('bi-eye-slash');
+            }
         }
     </script>
 

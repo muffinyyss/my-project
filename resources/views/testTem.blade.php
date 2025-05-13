@@ -1,5 +1,9 @@
-@extends('layouts.sidebar')
+@extends('layouts.app')
+
+@section('title', 'Dashboard')
 
 @section('content')
-    <h1>ยินดีต้อนรับสู่ Dashboard!</h1>
+    <h1>Welcome to the Dashboard</h1>
+    <p>Logged in as: {{ session('username') }}</p>
+
 @endsection
