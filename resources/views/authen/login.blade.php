@@ -10,7 +10,15 @@
                     <div class="text-center mb-5 mt-5">
                         <h4 class="fw-bold">Welcome</h4>
                     </div>
-                    <form method="POST" action="{{ url('/test') }}">
+
+                    @if($errors->has('login'))
+                        <div class="alert alert-danger">
+                            {{ $errors->first('login') }}
+                        </div>
+                    @endif
+
+
+                    <form method="GET" action="{{ url('testTem') }}">
                         @csrf
                         <div class="mb-4">
                             <label class="form-label fw-semibold fs-5" for="site">Site</label>

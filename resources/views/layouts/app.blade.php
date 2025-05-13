@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>@yield('title', 'My App')</title>
@@ -15,21 +16,23 @@
     <!-- Gentelella Custom CSS -->
     <link href="{{ asset('gentelella/css/custom.min.css') }}" rel="stylesheet">
 </head>
+
 <body class="nav-md">
 
-    <div class="container body">
-        <div class="main_container">
+    {{-- <div class="container body"> --}}
+        {{-- <div class="main_container"> --}}
 
             <!-- Sidebar -->
-            @include('layouts.sidebar')  {{-- เรียกใช้งาน Sidebar ที่แยกไว้ --}}
+            {{-- @include('layouts.sidebar') เรียกใช้งาน Sidebar ที่แยกไว้ --}}
 
             <!-- Content -->
             <div class="right_col" role="main">
-                @yield('content')  {{-- เนื้อหาของแต่ละหน้าจะถูกแทรกตรงนี้ --}}
+                @yield('content') {{-- เนื้อหาของแต่ละหน้าจะถูกแทรกตรงนี้ --}}
             </div>
 
-        </div>
-    </div>
+            {{--
+        </div> --}}
+        {{-- </div> --}}
 
     <!-- JS (ถ้าจำเป็น) -->
     <script src="{{ asset('vendors/jquery/jquery.min.js') }}"></script>
@@ -38,4 +41,5 @@
     <script src="{{ asset('gentelella/js/custom.min.js') }}"></script>
 
 </body>
+
 </html>

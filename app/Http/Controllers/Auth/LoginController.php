@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers\Auth;
 
+
 use App\Http\Controllers\Controller;
 use Auth;
 use Illuminate\Http\Request;
-use Session;
+use Illuminate\Support\Facades\Session;
 
 class LoginController extends Controller
 {
@@ -48,9 +49,12 @@ class LoginController extends Controller
             Session::put('username', $request->username);
 
             // Redirect ไปหน้า test
-            return redirect('/test');
+            return redirect()->route('testTem');
+
         }
 
+        // ถ้าข้อมูลผิด ล้าง session เผื่อมีค้าง
+        Session::forget('logged_in');
         // ถ้าข้อมูลผิด กลับมาที่หน้า login และแสดงข้อผิดพลาด
         return back()->withErrors(['login' => 'Invalid site, username, or password']);
     }
