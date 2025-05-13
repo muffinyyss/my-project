@@ -32,8 +32,9 @@
             <div class="col-md-3 left_col menu_fixed">
                 <div class="left_col scroll-view">
                     <div class="navbar nav_title" style="border: 0;">
-                        <a href="{{ route('Home') }}" class="site_title"><i class="bx bx-home-heart"></i>
-                            <span>{{ strtoupper(session('site')) }}</span></a>
+                        <a href="{{ route('Home') }}" class="site_title">
+                            <span>{{ strtoupper(session('site')) }}</span>
+                        </a>
                     </div>
 
                     <div class="clearfix"></div>
