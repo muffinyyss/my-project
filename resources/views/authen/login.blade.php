@@ -11,31 +11,30 @@
                         <h4 class="fw-bold">Welcome</h4>
                     </div>
 
-                    @if($errors->has('login'))
+                    @if($errors->has('authen.login'))
                         <div class="alert alert-danger">
-                            {{ $errors->first('login') }}
+                            {{ $errors->first('authen.login') }}
                         </div>
                     @endif
 
 
-                    <form method="GET" action="{{ url('testTem') }}">
+                    <form method="POST" action="{{ route('login.perform') }}">
                         @csrf
                         <div class="mb-4">
                             <label class="form-label fw-semibold fs-5" for="site">Site</label>
-                            <input type="text" id="site" class="form-control form-control-lg" placeholder="Site" required />
+                            <input type="text" id="site" class="form-control form-control-lg" placeholder="Site" required name="site"/>
                         </div>
 
                         <div class="mb-4">
                             <label class="form-label fw-semibold fs-5" for="username">Username</label>
-                            <input type="text" id="username" class="form-control form-control-lg" placeholder="Username"
-                                required />
+                            <input type="text" id="username" class="form-control form-control-lg" placeholder="Username" required  name="username"/>
                         </div>
 
                         <div class="mb-5">
                             <label class="form-label fw-semibold fs-5" for="password">Password</label>
                             <div class="input-group">
                                 <input type="password" id="password" class="form-control form-control-lg"
-                                    placeholder="Password" required />
+                                    placeholder="Password" required name="password"/>
                                 <span class="input-group-text" onclick="togglePassword()" style="cursor: pointer;">
                                     <i class="bi bi-eye-slash" id="toggleIcon"></i>
                                 </span>

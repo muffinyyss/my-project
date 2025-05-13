@@ -14,8 +14,8 @@ class LoginController extends Controller
     public function showLoginForm()
     {
         if (Session::get('logged_in')) {
-            // ถ้าผู้ใช้ล็อกอินแล้ว ไปที่หน้า /test
-            return redirect('/test');
+            // ถ้าผู้ใช้ล็อกอินแล้ว ไปที่หน้า /Home
+            return redirect('Home');
         }
 
         // ถ้ายังไม่ล็อกอิน แสดงหน้า login
@@ -48,15 +48,15 @@ class LoginController extends Controller
             Session::put('site', $request->site);
             Session::put('username', $request->username);
 
-            // Redirect ไปหน้า test
-            return redirect()->route('testTem');
+            // Redirect ไปหน้า Home
+            return redirect()->route('Home');
 
         }
 
         // ถ้าข้อมูลผิด ล้าง session เผื่อมีค้าง
         Session::forget('logged_in');
         // ถ้าข้อมูลผิด กลับมาที่หน้า login และแสดงข้อผิดพลาด
-        return back()->withErrors(['login' => 'Invalid site, username, or password']);
+        return back()->withErrors(['authen.login' => 'Invalid site, username, or password']);
     }
 
     // ฟังก์ชันการ Logout

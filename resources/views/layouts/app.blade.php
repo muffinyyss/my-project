@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>@yield('title', 'My App')</title>
+    <title>ADM | @yield('title')</title>
 
     <!-- Vendor CSS -->
     <link href="{{ asset('vendors/bootstrap/dist/css/bootstrap.min.css') }}" rel="stylesheet">
@@ -15,6 +15,12 @@
 
     <!-- Gentelella Custom CSS -->
     <link href="{{ asset('gentelella/css/custom.min.css') }}" rel="stylesheet">
+
+
+    <link rel="icon" type="image/png" href="{{ asset('images/adm-r.png') }}">
+
+
+
 </head>
 
 <body class="nav-md">

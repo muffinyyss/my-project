@@ -1,6 +1,6 @@
 @extends('layouts.sidebar')
 
-@section('title', 'Dashboard')
+@section('title', 'Home')
 
 @section('content')
     <h1>Welcome to the Dashboard</h1>
